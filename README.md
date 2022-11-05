@@ -1,4 +1,4 @@
-# roubank-app
+# catalogo-ceu-profundo
 
 Este projeto tem como objetivo implementar um catálogo de objetos do céu profundo para astrônomos amadores.
 Frontend da aplicação desenvolvido com Angular e Backend simulado, usando o JSON Server.
