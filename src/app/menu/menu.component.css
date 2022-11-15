@@ -10,3 +10,11 @@
 .menu > div {
     margin-left: unset;
 }
+
+.menu > div > span {
+    padding: 11px;
+}
+
+.menu > div > span:hover {
+    background-color: var(--grey);
+}
