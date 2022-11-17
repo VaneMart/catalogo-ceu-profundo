@@ -1,6 +1,14 @@
-<div class="menu row valign-wrapper left-align z-depth-2">
-    <!-- Interpolation -->
-    <div class="col s6 m2 l1"><span>{{itens[0]}}</span></div>
-    <div class="col s6 m2 l1"><span>{{itens[1]}}</span></div>
-</div>
+<!-- Interpolation -->
+<mat-toolbar class="menu menu-browser  valign-wrapper left-align z-depth-2 hide-on-small-only row"> 
+    <button mat-button class="menu menu-item col"><span>{{itens[0]}}</span></button>
+    <button mat-button class="menu menu-item col"><span>{{itens[1]}}</span></button>
+</mat-toolbar>
+
+<mat-toolbar class="menu menu-mobile valign-wrapper rigth-align z-depth-2 hide-on-med-and-up row"> 
+    <button mat-button class="menu menu-item col" (click)="exibirMenus();"><mat-icon class="menu-icon">menu</mat-icon></button>
+    <mat-toolbar-row class="menu menu-item col s12" *ngIf="exibir"><span>{{itens[0]}}</span></mat-toolbar-row>
+    <mat-toolbar-row class="menu menu-item col s12" *ngIf="exibir"><span>{{itens[1]}}</span></mat-toolbar-row>
+</mat-toolbar>
+
+
 

@@ -3,18 +3,33 @@
     color: var(--black);
     font-family: var(--font-family);
     font-weight: bold;
-    height: 40px;
-    padding-left: 5%; 
+    border: 0px;
 }
 
-.menu > div {
-    margin-left: unset;
+.menu-browser {
+ height: 40px;
+ padding-left: 5%;
 }
 
-.menu > div > span {
-    padding: 11px;
+.menu-mobile {
+    padding: 0%;
+    align-items: start;
 }
 
-.menu > div > span:hover {
+.menu-item {
+    line-height: 250%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.menu-item:hover {
     background-color: var(--grey);
+    border: 0px;
 }
+
+.menu-icon {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
