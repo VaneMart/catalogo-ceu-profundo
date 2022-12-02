@@ -1,0 +1,66 @@
+.anotacao {
+    font-family: var(--font-family);
+    border: 1px solid;
+    border-color: var(--grey);
+    margin-bottom: unset !important;
+    margin-top: unset !important;
+    padding-left: unset !important;
+    padding-right: unset !important;
+    min-height: 600px;
+    max-height: 600px;
+}
+
+.anotacao > .subtitulo {
+    font-weight: bold;
+    line-height: 600%;
+    margin-bottom: 5px;
+    margin-top: 5px!important;
+}
+
+.anotacao > .dado {
+    font-size: small;
+    margin-bottom: 5px;
+}
+
+.anotacao > .dado > .scroll {
+    min-height: 350px;
+    max-height: 350px;
+}
+
+.anotacao > .dado > textarea {
+    width: 100%;
+    min-height: 350px;
+    max-height: 350px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border: 0px;
+    font-family: var(--font-family) !important;
+    resize: none;
+}
+
+.anotacao > .dado > textarea:focus {
+    outline: var(--blue) !important;
+    border-color: var(--blue) !important;
+}
+
+.lista > .normal {
+    list-style-type: square; 
+    font-weight: bold;
+    color: var(--grey);
+    font-size: x-large;
+    line-height: 200%;
+}
+
+.lista > .selecionado {
+    list-style-type: square; 
+    font-weight: bold;
+    color: var(--blue);
+    font-size: x-large;
+    line-height: 200%;
+}
+
+.card {
+    border: 0px !important;
+    box-shadow: none !important;
+}
+

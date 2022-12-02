@@ -1,0 +1,8 @@
+.imagem {
+    height: 280px;
+    background-color: var(--grey);
+}
+
+.imagem > img {
+    height: 280px;
+}

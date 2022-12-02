@@ -1,0 +1,22 @@
+.footer {
+    background-color: var(--black);
+    color: var(--blue);
+    font-family: var(--font-family);
+    font-style: normal;
+    height: 60px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    margin-bottom: unset;
+    padding-top: 5px;
+}
+
+.footer > div {
+    margin-left: unset;
+}
+
+.logo {
+    width: 40px;
+    height: 35px;
+}
