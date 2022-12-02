@@ -1,0 +1,114 @@
+<form >
+    <div class="col s12 m12 l5">
+        <mat-card class="card">
+            <mat-card-content class="objeto z-depth-2 row center-align">
+                <div class="dado col s9 m9 l9 offset-s3 offset-m3 offset-l3">
+                    <div class="imagem col s8 m8 l8">
+                        <img [src]="imagem.base64" *ngIf="imagem.base64" #img>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <input type="file" class="hide" (change)="onChange($event)" #escolher>
+                        <button (click)="removerImagem(); escolher.click()">
+                            <div *ngIf="!imagem.base64">
+                                <span> escolher arquivo </span>
+                            </div>
+                            <div *ngIf="imagem.base64">
+                                <span class="col s6 m6 l6 left-align">{{arquivo}}</span> 
+                                <span class="col s6 m6 l6 right-align"> x </span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="dado valign-wrapper col s9 m9 l9 offset-s1 offset-m1 offset-l1">
+                    <div class="truncate col s3 m3 l3">
+                        <label>Nome: </label>
+                    </div>
+                    <div class="col s9 m9 l9">
+                        <input type="text" name="nome" [(ngModel)]="objeto.nome"/>
+                    </div>
+                </div>
+
+                <div class="dado valign-wrapper col s9 m9 l9 offset-s1 offset-m1 offset-l1">
+                    <div class="truncate col s3 m3 l3">
+                        <label>Tipo: </label>
+                    </div>
+                    <div class="col s9 m9 l9">
+                        <input type="text" name="tipo" [(ngModel)]="objeto.tipo"/>
+                    </div>
+                </div>
+
+                <div class="dado valign-wrapper col s9 m9 l9 offset-s1 offset-m1 offset-l1">
+                    <div class="truncate col s3 m3 l3">
+                        <label>Constelação: </label>
+                    </div>
+                    <div class="col s9 m9 l9">
+                        <input type="text" name="constelacao" [(ngModel)]="objeto.constelacao"/>
+                    </div>
+                </div>
+
+                <div class="dado valign-wrapper col s9 m9 l9 offset-s1 offset-m1 offset-l1">
+                    <div class="truncate col s3 m3 l3">
+                        <label>Magnitude: </label>
+                    </div>
+                    <div class="col s9 m9 l9">
+                        <input type="text" name="magnitude" [(ngModel)]="objeto.magnitude"/>
+                    </div>
+                </div>
+
+                <div class="dado valign-wrapper col s9 m9 l9 offset-s1 offset-m1 offset-l1">
+                    <div class="truncate col s3 m3 l3">
+                        <label>A. Reta: </label>
+                    </div>
+                    <div class="col s9 m9 l9">
+                        <input type="text" name="anguloReta" [(ngModel)]="objeto.anguloReta"/>
+                    </div>
+                </div>
+
+                <div class="dado valign-wrapper col s9 m9 l9 offset-s1 offset-m1 offset-l1">
+                    <div class="truncate col s3 m3 l3">
+                        <label>Declinação: </label>
+                    </div>
+                    <div class="col s9 m9 l9">
+                        <input type="text" name="declinacao" [(ngModel)]="objeto.declinacao"/>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div *ngFor="let anotacao of anotacoes; let i = index">
+        <div *ngIf="posicao == i">
+            <div class="col s12 m12 l5">
+                <mat-card class="card">
+                    <mat-card-content class="anotacao z-depth-2 row">
+                        <div class="subtitulo center-align col s12 m12 l12">
+                            <span>Anotações</span>
+                        </div>
+                        <div class="dado col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+                            <textarea type="text" name="conteudo" [(ngModel)]="anotacao.conteudo" (keyup)="onKeyup($event)"></textarea>
+                            <div class="row center-align">
+                                <ul class="lista col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+                                    <li *ngFor="let anotacao of anotacoes; let i = index" [attr.class]="'col m1 l1 ' + (posicao == i ?  'selecionado' : 'normal')" (click)="mover(i)"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12 l5"></div>
+        <div class="col s12 m12 l5">
+            <div class="operacao row">
+                <div class="col s6 m3 l3 offset-m3 offset-l8">
+                    <button mat-button class="z-depth-2" (click)="salvar()">Salvar</button>
+                </div>
+                <div class="col s6 m3 l3 offset-s6 offset-m6 offset-l5">
+                    <button mat-button class="z-depth-2" [routerLink]="['/home']">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

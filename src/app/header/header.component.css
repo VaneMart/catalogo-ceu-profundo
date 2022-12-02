@@ -1,9 +1,0 @@
-.header {
-    background-color: var(--black);
-    color: var(--blue);
-    font-family: var(--font-family);
-    font-style: normal;
-    height: 75px;
-    padding-right: 2%;
-    margin-bottom: unset;
-}

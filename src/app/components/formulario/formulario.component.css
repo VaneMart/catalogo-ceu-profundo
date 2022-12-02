@@ -1,0 +1,135 @@
+.imagem {
+    height: 140px;
+}
+
+.imagem > img {
+    width: 100%;
+    height: 140px;
+    min-height: 140px;
+    margin-left: 3%;
+    margin-right: 5%;
+}
+
+.objeto {
+    padding-top: 40px;
+}
+
+.objeto, .anotacao {
+    font-family: var(--font-family);
+    border: 1px solid;
+    border-color: var(--grey);
+    margin-bottom: unset !important;
+    margin-top: unset !important;
+    padding-left: unset !important;
+    padding-right: unset !important;
+    min-height: 600px;
+    max-height: 600px;
+}
+
+.anotacao > .subtitulo {
+    line-height: 600%;
+    font-weight: bold;
+}
+
+.anotacao > .dado > textarea {
+    width: 100%;
+    min-height: 350px;
+    max-height: 350px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-color: var(--grey);
+    font-family: var(--font-family) !important;
+    resize: none;
+}
+
+.anotacao > .dado > textarea:focus {
+    outline: var(--blue) !important;
+    border-color: var(--blue) !important;
+}
+
+.objeto > .dado {
+    font-size: small;
+    text-align: right;
+}
+
+.objeto > .dado > div > label {
+    color: var(--black);
+    font-weight: bold;  
+}
+
+.objeto > .dado > div > input[type=text] {
+    border: 1px solid;
+    border-color: var(--grey);
+    height: 35px;
+    font-family: var(--font-family) !important;
+    font-size: small;
+    padding-left: 10px;
+}
+
+.objeto > .dado > div > input[type=text]:focus {
+    outline: var(--blue) !important;
+    border-color: var(--blue) !important;
+}
+
+.objeto > .dado > div > button {
+    font-family: var(--font-family) !important;
+    font-weight: bold !important;
+    background-color: var(--blue);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 35px;
+    margin-left: 3%;
+    margin-right: 5%;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.objeto > .dado > div > button:hover {
+    background-color: var(--grey);
+}
+
+.operacao {
+    margin-top: 20px;
+    margin-bottom: 55px;
+}
+
+.operacao > div {
+    margin-top: -70px;
+    position: relative;
+}
+
+.operacao > div >  button {
+    font-family: var(--font-family) !important;
+    font-weight: bold !important;
+    background-color: var(--blue);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 40px;
+    margin-left: 2%;
+}
+
+.operacao > div >  button:hover {
+    background-color: var(--grey);
+}
+
+.lista > .normal {
+    list-style-type: square; 
+    font-weight: bold;
+    color: var(--grey);
+    font-size: x-large;
+    line-height: 200%;
+}
+
+.lista > .selecionado {
+    list-style-type: square; 
+    font-weight: bold;
+    color: var(--blue);
+    font-size: x-large;
+    line-height: 200%;
+}
+
+.card {
+    border: 0px !important;
+    box-shadow: none !important;
+}
