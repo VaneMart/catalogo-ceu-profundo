@@ -1,0 +1,12 @@
+.header {
+    background-color: var(--black);
+    height: 75px;
+    padding-right: 2%;
+    margin-bottom: unset;
+}
+
+.header > div > a > h5 {
+    color: var(--blue) !important;
+    font-family: var(--font-family) !important;
+    font-weight: bold !important;
+}

@@ -1,0 +1,30 @@
+.home {
+    margin-left: 10%;
+}
+
+.home > .principal {
+    margin-left: 5%;
+}
+
+.operacao {
+    margin-bottom: 55px;
+}
+
+.operacao > div {
+    margin-top: -70px;
+    position: relative;
+}
+
+.operacao > div >  button {
+    font-family: var(--font-family) !important;
+    font-weight: bold !important;
+    background-color: var(--blue);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 40px;
+    margin-left: 2%;
+}
+
+.operacao > div >  button:hover {
+    background-color: var(--grey);
+}

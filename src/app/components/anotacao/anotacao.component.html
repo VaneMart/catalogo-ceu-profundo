@@ -1,0 +1,22 @@
+<div *ngFor="let anotacao of anotacoes; let i = index">
+    <div *ngIf="posicao == i">
+        <mat-card class="card">
+            <mat-card-content class="anotacao z-depth-2 row">
+                <div class="subtitulo center-align col s12 m12 l12">
+                    <span>Anotações</span>
+                </div>
+                <div class="dado col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+                    <textarea type="text" readonly>{{anotacao?.conteudo}}</textarea>
+                    <div class="row center-align">
+                        <ul class="lista col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+                            <li *ngFor="let anotacao of anotacoes; let i = index" [attr.class]="'col m1 l1 ' + (posicao == i ?  'selecionado' : 'normal')" (click)="mover(i)"></li>
+                        </ul>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+

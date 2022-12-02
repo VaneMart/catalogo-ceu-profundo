@@ -1,0 +1,19 @@
+<mat-toolbar class="menu menu-browser  valign-wrapper left-align z-depth-2 hide-on-small-only row"> 
+    <button mat-button class="menu menu-item col" [routerLink]="['pesquisar']">Pesquisar</button>
+    <button mat-button class="menu menu-item col" [routerLink]="['catalogar']">Catalogar</button>
+</mat-toolbar>
+
+<mat-toolbar class="menu menu-mobile valign-wrapper rigth-align z-depth-2 hide-on-med-and-up row"> 
+    <button mat-button class="menu menu-item col" (click)="exibirMenusMobile();"><mat-icon class="menu-icon">menu</mat-icon></button>
+
+    <mat-toolbar-row class="menu menu-item col s12" *ngIf="exibir">
+        <button mat-button class="menu menu-item col" [routerLink]="['pesquisar']">Pesquisar</button>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="menu menu-item col s12" *ngIf="exibir">
+        <button mat-button class="menu menu-item col" [routerLink]="['catalogar']">Catalogar</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+

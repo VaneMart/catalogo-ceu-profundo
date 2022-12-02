@@ -1,0 +1,31 @@
+.objeto {
+    font-family: var(--font-family);
+    border: 1px solid;
+    border-color: var(--grey);
+    margin-bottom: unset !important;
+    margin-top: unset !important;
+    padding-left: unset !important;
+    padding-right: unset !important;
+    min-height: 600px;
+    max-height: 600px;
+}
+
+.objeto > .subtitulo {
+    line-height: 600%;
+    font-weight: bold;
+}
+
+.objeto > .dado {
+    font-size: small;
+    line-height: 225%;
+}
+
+.objeto > .dado > label {
+    color: var(--black);
+    font-weight: bold;
+}
+
+.card {
+    border: 0px !important;
+    box-shadow: none !important;
+}
