@@ -1,9 +1,4 @@
 {
-    "/objetos/:id": "/objetos/:id",
-    "/objetos?*": "/objetos?$1",
-    "/anotacoes/:id": "/anotacoes/:id",
-    "/anotacoes?*": "/anotacoes?$1",
-    "/imagens/:id": "/imagens/:id",
-    "/imagens?*": "/imagens?$1"
+  
 }
 
