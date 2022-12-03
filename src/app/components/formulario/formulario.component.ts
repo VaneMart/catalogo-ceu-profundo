@@ -87,6 +87,7 @@ export class FormularioComponent implements OnInit {
       reader.onloadend = () => {
         this.imagem.base64 = <string>reader.result;
         this.arquivo = arquivo.name;
+        console.log(this.imagem.base64);
       }
       reader.readAsDataURL(arquivo);
     }
