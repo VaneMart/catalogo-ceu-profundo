@@ -12,12 +12,6 @@
       "conteudo": "Foi escolhido como alvo para uma das primeiras mensagens de rádio enviadas ao espaço, com o objetivo de transmitir a uma possível civilização extraterrestre informações sobre a Terra e a civilização humana. A mensagem foi em 1974 pelo projeto SETI com o uso do radiotelescópio porto-riquenho Arecibo. A razão principal era devido ao fato de que a região, tendo uma alta densidade de estrelas, tem uma maior chance de existência de vida inteligente habitando um planeta. Entretanto, o aglomerado já não vai mais estar em sua localização atual quando a mensagem chegar. Foi mais uma demonstração tecnológica do que uma tentativa real de contactar uma civilização extraterrestre inteligente.",
       "uuid": "51e0576b-53af-403e-9295-7514241dd9d2",
       "id": 2
-    },
-    {
-      "posicao": 0,
-      "conteudo": "Idade estimada em cerca de 220 milhões de anos, contendo por volta de 80 estrelas. \n\n\nObjeto valioso para o estudo da evolução e estrutura estelares, por conter estrelas que se formaram aproximadamente ao mesmo tempo a partir de uma mesma nuvem de gás e poeira. Facilmente visualizado a olho nu.",
-      "uuid": "9586e6be-9019-4dac-a263-8fab6d3c7985",
-      "id": 3
     }
   ],
   "objetos": [
@@ -31,17 +25,6 @@
       "uuid": "51e0576b-53af-403e-9295-7514241dd9d2",
       "data": "03/12/2022 00:07:10",
       "id": 2
-    },
-    {
-      "nome": "Aglomerado de Ptolomeu",
-      "tipo": "Aglomerado aberto",
-      "constelacao": "Escorpião",
-      "magnitude": "3.3",
-      "anguloReta": "17h 53 min 56 s",
-      "declinacao": "-34˚ 48' 57''",
-      "uuid": "9586e6be-9019-4dac-a263-8fab6d3c7985",
-      "data": "03/12/2022 00:04:47",
-      "id": 3
     }
   ]
 }
