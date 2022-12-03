@@ -1,7 +1,8 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Objeto } from 'src/app/model/objeto.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,21 +12,21 @@ export class ObjetoService {
   constructor(private http: HttpClient) { }
 
   obterUltimoObjeto(): Observable<Objeto[]> {
-    return this.http.get<Objeto[]>('http://localhost:3000/objetos?_sort=data&_order=desc&_limit=1');
+    return this.http.get<Objeto[]>(`${environment.apiUrl}/objetos?_sort=data&_order=desc&_limit=1`);
   }
 
   obter(uuid?: string): Observable<Objeto[]> {
-    return this.http.get<Objeto[]>('http://localhost:3000/objetos?uuid=' + uuid);
+    return this.http.get<Objeto[]>(`${environment.apiUrl}/objetos?uuid=${uuid}&_sort=posicao&_order=asc`);
   }
 
   salvar(objeto: Objeto): Observable<Objeto> {
-    if(objeto.id) {
-      return this.http.put<Objeto>('http://localhost:3000/objetos/' + objeto.id, objeto);
+    if (objeto.id) {
+      return this.http.put<Objeto>(`${environment.apiUrl}/objetos/${objeto.id}`, objeto);
     } 
-    return this.http.post<Objeto>('http://localhost:3000/objetos', objeto);
+    return this.http.post<Objeto>(`${environment.apiUrl}/objetos/${objeto.id}`, objeto);
   }
 
   excluir(objeto: Objeto): Observable<Objeto> {
-    return this.http.delete<Objeto>('http://localhost:3000/objetos/' + objeto.id);
+    return this.http.delete<Objeto>(`${environment.apiUrl}/objetos/${objeto.id}`);
   }
 }

@@ -1,7 +1,8 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Anotacao } from '../../model/anotacao.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +12,17 @@ export class AnotacaoService {
   constructor(private http: HttpClient) { }
 
   obter(uuid?: string): Observable<Anotacao[]> {
-    return this.http.get<Anotacao[]>('http://localhost:3000/anotacoes?uuid=' + uuid + '&_sort=posicao&_order=asc');
+    return this.http.get<Anotacao[]>(`${environment.apiUrl}/anotacoes?uuid=${uuid}&_sort=posicao&_order=asc`);
   }
 
   salvar(anotacao: Anotacao): Observable<Anotacao> {
     if (anotacao.id) {
-      return this.http.put<Anotacao>('http://localhost:3000/anotacoes/' + anotacao.id, anotacao);
+      return this.http.put<Anotacao>(`${environment.apiUrl}/anotacoes/${anotacao.id}`, anotacao);
     } 
-    return this.http.post<Anotacao>('http://localhost:3000/anotacoes', anotacao);
+    return this.http.post<Anotacao>(`${environment.apiUrl}/anotacoes/${anotacao.id}`, anotacao);
   }
 
   excluir(anotacao: Anotacao): Observable<Anotacao> {
-    return this.http.delete<Anotacao>('http://localhost:3000/anotacoes/' + anotacao.id);
+    return this.http.delete<Anotacao>(`${environment.apiUrl}/anotacoes/${anotacao.id}`);
   }
 }
