@@ -8,7 +8,7 @@ export class Objeto {
     tipo?: string;
     constelacao?: string;
     magnitude?: string;
-    anguloReta?: string;
+    ascencaoReta?: string;
     declinacao?: string;
 
     constructor() {}

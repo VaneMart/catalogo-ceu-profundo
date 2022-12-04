@@ -19,7 +19,7 @@ export class AnotacaoService {
     if (anotacao.id) {
       return this.http.put<Anotacao>(`${environment.apiUrl}/anotacoes/${anotacao.id}`, anotacao);
     } 
-    return this.http.post<Anotacao>(`${environment.apiUrl}/anotacoes/${anotacao.id}`, anotacao);
+    return this.http.post<Anotacao>(`${environment.apiUrl}/anotacoes`, anotacao);
   }
 
   excluir(anotacao: Anotacao): Observable<Anotacao> {

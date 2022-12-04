@@ -11,7 +11,7 @@ export class ObjetoService {
 
   constructor(private http: HttpClient) { }
 
-  obterUltimoObjeto(): Observable<Objeto[]> {
+  obterUltimo(): Observable<Objeto[]> {
     return this.http.get<Objeto[]>(`${environment.apiUrl}/objetos?_sort=data&_order=desc&_limit=1`);
   }
 

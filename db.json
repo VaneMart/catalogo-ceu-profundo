@@ -8,7 +8,7 @@
   ],
   "anotacoes": [
     {
-      "posicao": 1,
+      "posicao": 0,
       "conteudo": "Foi escolhido como alvo para uma das primeiras mensagens de rádio enviadas ao espaço, com o objetivo de transmitir a uma possível civilização extraterrestre informações sobre a Terra e a civilização humana. A mensagem foi em 1974 pelo projeto SETI com o uso do radiotelescópio porto-riquenho Arecibo. A razão principal era devido ao fato de que a região, tendo uma alta densidade de estrelas, tem uma maior chance de existência de vida inteligente habitando um planeta. Entretanto, o aglomerado já não vai mais estar em sua localização atual quando a mensagem chegar. Foi mais uma demonstração tecnológica do que uma tentativa real de contactar uma civilização extraterrestre inteligente.",
       "uuid": "51e0576b-53af-403e-9295-7514241dd9d2",
       "id": 2
@@ -20,10 +20,10 @@
       "tipo": "Aglomerado globular",
       "constelacao": "Hércules",
       "magnitude": "5.9",
-      "anguloReta": "16h 41 min 43 s",
-      "declinacao": "+36˚ 27' 59''",
+      "ascencaoReta": "16h 41m 43s",
+      "declinacao": "+36° 27' 59\"",
       "uuid": "51e0576b-53af-403e-9295-7514241dd9d2",
-      "data": "03/12/2022 00:07:10",
+      "data": "04/12/2022 19:16:11",
       "id": 2
     }
   ]

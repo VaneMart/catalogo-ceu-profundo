@@ -19,7 +19,7 @@ export class ImagemService {
     if (imagem.id) {
       return this.http.put<Imagem>(`${environment.apiUrl}/imagens/${imagem.id}`, imagem);
     } 
-    return this.http.post<Imagem>(`${environment.apiUrl}/imagens/${imagem.id}`, imagem);
+    return this.http.post<Imagem>(`${environment.apiUrl}/imagens`, imagem);
   }
 
   excluir(imagem: Imagem): Observable<Imagem> {
