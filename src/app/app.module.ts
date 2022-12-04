@@ -20,6 +20,9 @@ import { ImagemComponent } from './components/imagem/imagem.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { FormsModule } from '@angular/forms';
+import { ToastModule } from '@coreui/angular';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 
@@ -47,15 +50,13 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     ScrollingModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ToastModule,
+    NoopAnimationsModule,
+    NgxMaskModule.forRoot()
   ],
   exports: [
-    MatCardModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    ScrollingModule,
-    AppRoutingModule
+    
   ],
   bootstrap: [AppComponent]
 })

@@ -22,8 +22,8 @@
     margin-top: unset !important;
     padding-left: unset !important;
     padding-right: unset !important;
-    min-height: 600px;
-    max-height: 600px;
+    min-height: 580px;
+    max-height: 580px;
 }
 
 .anotacao > .subtitulo {
@@ -65,6 +65,7 @@
     font-family: var(--font-family) !important;
     font-size: small;
     padding-left: 10px;
+    box-shadow: none !important;
 }
 
 .objeto > .dado > div > input[type=text]:focus {
@@ -133,3 +134,29 @@
     border: 0px !important;
     box-shadow: none !important;
 }
+
+.operacao > div > .desabilitado {
+    background-color: var(--grey) !important;
+    color: var(--off);
+    border-color: var(--off);
+}
+
+
+.toast {
+    z-index: 999;
+    position: fixed;
+    top: auto;
+    right: 5px;
+    color: var(--black);
+    background-color: var(--white);
+    font-weight: bold;
+    font-family: var(--font-family);
+}
+
+.mensagem {
+    color:red; 
+    font-size: xx-small;
+    margin-top: -8px !important;
+}
+
+

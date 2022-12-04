@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, HostListener, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Imagem } from 'src/app/model/imagem.model';
 
 @Component({

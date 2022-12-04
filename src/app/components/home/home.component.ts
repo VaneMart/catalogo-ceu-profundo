@@ -1,14 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { AnotacaoComponent } from '../anotacao/anotacao.component';
-import { ObjetoComponent } from '../objeto/objeto.component';
-import { TituloComponent } from '../titulo/titulo.component';
-import { ObjetoService } from '../../service/objeto/objeto.service';
-import { Objeto } from 'src/app/model/objeto.model';
-import { Operacao } from 'src/app/model/operacao.enumeration';
 import { Anotacao } from 'src/app/model/anotacao.model';
+import { Imagem } from 'src/app/model/imagem.model';
+import { Objeto } from 'src/app/model/objeto.model';
 import { AnotacaoService } from 'src/app/service/anotacao/anotacao.service';
 import { ImagemService } from 'src/app/service/imagem/imagem.service';
-import { Imagem } from 'src/app/model/imagem.model';
+import { ObjetoService } from '../../service/objeto/objeto.service';
 
 
 @Component({
@@ -18,16 +14,11 @@ import { Imagem } from 'src/app/model/imagem.model';
 })
 export class HomeComponent implements OnInit {
 
-  tituloComponent!: TituloComponent;
-  objetoComponent!: ObjetoComponent;
-  anotacaoComponent!: AnotacaoComponent;
-
-
   titulo?: string;
   objeto?: Objeto;
   imagem?: Imagem;
   anotacoes?: Anotacao[];
-  operacao?: Operacao;
+
 
   constructor(@Inject(ObjetoService) private objetoService: ObjetoService, 
               @Inject(AnotacaoService) private anotacaoService: AnotacaoService, 
@@ -35,20 +26,20 @@ export class HomeComponent implements OnInit {
   
   ngOnInit(): void {
     this.titulo = "Nenhum objeto catalogado";
-    this.obterUltimoObjeto();
+    this.obterUltimo();
   }
 
 
-  obterUltimoObjeto() {
-    let observable = this.objetoService.obterUltimoObjeto();
-    observable.subscribe((response => {
-      if(response.length > 0) {
-        this.titulo = "Último objeto catalogado";
-        this.objeto = response[0];
-        this.obterAnotacoes();
-        this.obterImagem();
-      }
-    }));
+  obterUltimo() {
+      let observable = this.objetoService.obterUltimo();
+      observable.subscribe((response => {
+          if(response.length > 0) {
+            this.objeto = response[0];
+            this.titulo = "Último objeto catalogado";
+            this.obterAnotacoes();
+            this.obterImagem();
+          }
+      }));
   }
 
   obterAnotacoes() {
