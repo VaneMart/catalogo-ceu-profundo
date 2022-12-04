@@ -1,12 +1,13 @@
-import { Component, Inject, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Anotacao } from 'src/app/model/anotacao.model';
 import { Imagem } from 'src/app/model/imagem.model';
 import { Objeto } from 'src/app/model/objeto.model';
 import { ImagemService } from 'src/app/service/imagem/imagem.service';
 import { ObjetoService } from 'src/app/service/objeto/objeto.service';
 import { AnotacaoService } from 'src/app/service/anotacao/anotacao.service';
-import {v4 as uuid} from 'uuid';
-import { Observable } from 'rxjs';
+import { v4 as uuid } from 'uuid';
+import { StorageService } from 'src/app/service/storage/storage.service';
+
 
 @Component({
   selector: 'app-formulario',
@@ -23,18 +24,24 @@ export class FormularioComponent implements OnInit {
   posicao: number = 0;  
   arquivo?: string;
 
+  public patternsCustomizados = {
+    '0': { pattern: new RegExp('[0-9]') },
+    S: { pattern: new RegExp('[+-]') },
+  };
 
+  public caracteresEspeciais = ['°', "'", '"', ' ', 'h', 'm', 's'];
 
   constructor(@Inject(ObjetoService) private objetoService: ObjetoService, 
               @Inject(ImagemService) private imagemService: ImagemService, 
-              @Inject(AnotacaoService) private anotacaoService: AnotacaoService) {}
+              @Inject(AnotacaoService) private anotacaoService: AnotacaoService, 
+              @Inject(StorageService) private storageService: StorageService) {}
   
   ngOnInit(): void {
-      this.objeto = new Objeto;
-      this.imagem = new Imagem;
-      this.anotacoes = [];
-      this.anotacoes.push(new Anotacao(0));
-
+        this.objeto = new Objeto;
+        this.imagem = new Imagem;
+        this.anotacoes = [];
+        this.anotacoes.push(new Anotacao(0));
+      
       if(this.uuid) {
         this.obterObjeto();
         this.obterImagem();
@@ -70,9 +77,11 @@ export class FormularioComponent implements OnInit {
   }
 
   salvar(): void {
-    this.salvarObjeto();
-    this.salvarImagem();
-    this.salvarAnotacoes();
+      //this.salvarObjeto();
+      //this.salvarImagem();
+      //this.salvarAnotacoes();
+    
+      this.storageService.salvar(this.objeto, this.imagem, this.anotacoes);
   }
 
   mover(indice: any): void {
@@ -122,6 +131,17 @@ export class FormularioComponent implements OnInit {
     } 
   }
 
+  salvarObjeto(): void {
+    this.objeto.uuid = this.objeto.uuid ? this.objeto.uuid : uuid();
+    this.objeto.data = new Date().toLocaleString();
+    let observable = this.objetoService.salvar(this.objeto);
+    observable.subscribe(response => {
+      if(response.id) {
+        this.objeto = response;
+      }
+    });
+  }
+
   salvarImagem(): void {
     this.imagem.uuid = this.imagem.uuid ? this.imagem.uuid : this.objeto.uuid;
     let observable = this.imagemService.salvar(this.imagem);
@@ -132,26 +152,21 @@ export class FormularioComponent implements OnInit {
     });
   }
 
-  salvarObjeto(): void {
-    this.objeto.uuid = this.objeto.uuid ? this.objeto.uuid : uuid();
-    this.objeto.data = new Date().toLocaleString();
-    let observable = this.objetoService.salvar(this.objeto);
-    observable.subscribe(response => {
-      if(response.id) {
-        this.objeto = response; 
+  salvarAnotacoes(): void {
+    this.anotacoes.forEach(anotacao => {
+      anotacao.uuid = anotacao.uuid ? anotacao.uuid : this.objeto.uuid;
+      if(anotacao.conteudo) {
+        let observable = this.anotacaoService.salvar(anotacao);
+        observable.subscribe(response => {
+          if(response.id) {
+            anotacao = response; 
+          }
+        });
       }
     });
   }
 
-  salvarAnotacoes(): void {
-    this.anotacoes.forEach(anotacao => {
-      anotacao.uuid = anotacao.uuid ? anotacao.uuid : this.objeto.uuid;
-       let observable = this.anotacaoService.salvar(anotacao);
-       observable.subscribe(response => {
-        if(response.id) {
-          anotacao = response; 
-        }
-       });
-    });
+  t(event: any) {
+    console.log(event);
   }
 }

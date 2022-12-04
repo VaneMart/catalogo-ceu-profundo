@@ -23,9 +23,9 @@
     border: 0px;
 }
 
-.menu-item:hover {
-    background-color: var(--grey);
-    border: 0px;
+.menu-item:hover, .menu-item:hover > button, .menu-item > button:hover {
+    background-color: var(--grey) !important;
+    border: 0px !important;
 }
 
 .menu-icon {

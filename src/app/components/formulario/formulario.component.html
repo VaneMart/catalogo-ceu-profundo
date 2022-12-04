@@ -1,6 +1,18 @@
-<form >
+
+<form #form="ngForm" (ngSubmit)="salvar()">
     <div class="col s12 m12 l5">
         <mat-card class="card">
+            <!--
+            <c-toast (timer)="contabilizarTempo($event)"
+                     [visible]="mensagemVisivel()" 
+                     class="mensagem align-items-center">
+                <div>
+                    <c-toast-body >
+                        <span>{{mensagem}}</span>
+                    </c-toast-body>
+                </div>
+            </c-toast>
+            -->
             <mat-card-content class="objeto z-depth-2 row center-align">
                 <div class="dado col s9 m9 l9 offset-s3 offset-m3 offset-l3">
                     <div class="imagem col s8 m8 l8">
@@ -24,7 +36,15 @@
                         <label>Nome: </label>
                     </div>
                     <div class="col s9 m9 l9">
-                        <input type="text" name="nome" [(ngModel)]="objeto.nome"/>
+                        <input #nome="ngModel"
+                               type="text" 
+                               name="nome" 
+                               [(ngModel)]="objeto.nome" 
+                               minlength="2"
+                               maxlength="60"
+                               required="true"/>
+                               <div class="mensagem" *ngIf="nome.touched && (nome.errors?.['minlength'] ||nome.errors?.['maxlength'])"><span>precisa ter de 2 a 60 caracteres</span></div>
+                               <div class="mensagem" *ngIf="nome.touched && nome.errors?.['required']"><span>campo obrigatório</span></div>
                     </div>
                 </div>
 
@@ -33,7 +53,13 @@
                         <label>Tipo: </label>
                     </div>
                     <div class="col s9 m9 l9">
-                        <input type="text" name="tipo" [(ngModel)]="objeto.tipo"/>
+                        <input #tipo="ngModel"
+                               type="text" 
+                               name="tipo" 
+                               [(ngModel)]="objeto.tipo" 
+                               minlength="2"
+                               maxlength="60"/>
+                               <div class="mensagem" *ngIf="tipo.touched && (tipo.errors?.['minlength'] || tipo.errors?.['maxlength'])"><span>precisa ter de 2 a 60 caracteres</span></div>
                     </div>
                 </div>
 
@@ -42,7 +68,13 @@
                         <label>Constelação: </label>
                     </div>
                     <div class="col s9 m9 l9">
-                        <input type="text" name="constelacao" [(ngModel)]="objeto.constelacao"/>
+                        <input #constelacao="ngModel"
+                               type="text" 
+                               name="constelacao" 
+                               [(ngModel)]="objeto.constelacao" 
+                               minlength="2"
+                               maxlength="60"/>
+                               <div class="mensagem" *ngIf="constelacao.touched && (constelacao.errors?.['minlength'] || constelacao.errors?.['maxlength'])"><span>precisa ter de 2 a 60 caracteres</span></div>
                     </div>
                 </div>
 
@@ -51,7 +83,13 @@
                         <label>Magnitude: </label>
                     </div>
                     <div class="col s9 m9 l9">
-                        <input type="text" name="magnitude" [(ngModel)]="objeto.magnitude"/>
+                        <input #magnitude="ngModel"
+                               name="magnitude" 
+                               type="text" 
+                               [(ngModel)]="objeto.magnitude" 
+                               mask="0.0" 
+                               [dropSpecialCharacters]="false" 
+                               maxlength="3"/>
                     </div>
                 </div>
 
@@ -60,7 +98,19 @@
                         <label>A. Reta: </label>
                     </div>
                     <div class="col s9 m9 l9">
-                        <input type="text" name="anguloReta" [(ngModel)]="objeto.anguloReta"/>
+                        <input  #ascencaoReta="ngModel"
+                                name="ascencaoReta" 
+                                type="text" 
+                                [(ngModel)]="objeto.ascencaoReta" 
+                                [patterns]="patternsCustomizados"
+                                mask="00h 00m 00s"
+                                [specialCharacters]="caracteresEspeciais"
+                                [dropSpecialCharacters]="false" 
+                                [pattern]="'([0-1][0-9]|2[0-3])\h\ [0-9]{2}\m\ [0-9]{2}\s'"
+                                maxlength="11"
+                                required="true"/>
+                                <div class="mensagem" *ngIf="ascencaoReta.touched && !ascencaoReta.valid && !ascencaoReta.errors?.['required']"><span>valor inválido</span></div>
+                                <div class="mensagem" *ngIf="ascencaoReta.touched && ascencaoReta.errors?.['required']"><span>campo campo obrigatório</span></div>
                     </div>
                 </div>
 
@@ -69,7 +119,19 @@
                         <label>Declinação: </label>
                     </div>
                     <div class="col s9 m9 l9">
-                        <input type="text" name="declinacao" [(ngModel)]="objeto.declinacao"/>
+                        <input  #declinacao="ngModel"
+                                name="declinacao" 
+                                type="text" 
+                                [(ngModel)]="objeto.declinacao" 
+                                [patterns]="patternsCustomizados"
+                                mask="S00° 00' 00&quot;"
+                                [specialCharacters]="caracteresEspeciais"
+                                [dropSpecialCharacters]="false" 
+                                [pattern]="'[-|+]([0-8][0-9]|90)°\ [0-9]{2}\'\ [0-9]{2}&quot;'"
+                                maxlength="12"
+                                required="true"/>
+                                <div class="mensagem" *ngIf="declinacao.touched && !declinacao.valid && !declinacao.errors?.['required']"><span>valor inválido</span></div>
+                                <div class="mensagem" *ngIf="declinacao.touched && declinacao.errors?.['required']"><span>campo campo obrigatório</span></div>
                     </div>
                 </div>
             </mat-card-content>
@@ -85,10 +147,16 @@
                             <span>Anotações</span>
                         </div>
                         <div class="dado col s10 m10 l10 offset-s1 offset-m1 offset-l1">
-                            <textarea type="text" name="conteudo" [(ngModel)]="anotacao.conteudo" (keyup)="onKeyup($event)"></textarea>
+                            <textarea  name="conteudo" 
+                                       type="text" 
+                                       [(ngModel)]="anotacao.conteudo" 
+                                       (keyup)="onKeyup($event)"></textarea>
                             <div class="row center-align">
                                 <ul class="lista col s10 m10 l10 offset-s1 offset-m1 offset-l1">
-                                    <li *ngFor="let anotacao of anotacoes; let i = index" [attr.class]="'col m1 l1 ' + (posicao == i ?  'selecionado' : 'normal')" (click)="mover(i)"></li>
+                                    <li *ngFor="let anotacao of anotacoes; let i = index" 
+                                        [attr.class]="'col m1 l1 ' + (posicao == i ?  'selecionado' : 'normal')" 
+                                        (click)="mover(i)">
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -103,7 +171,7 @@
         <div class="col s12 m12 l5">
             <div class="operacao row">
                 <div class="col s6 m3 l3 offset-m3 offset-l8">
-                    <button mat-button class="z-depth-2" (click)="salvar()">Salvar</button>
+                    <button mat-button class="z-depth-2" [class.desabilitado]="!form.valid" type="submit" [disabled]="!form.valid">Salvar</button>
                 </div>
                 <div class="col s6 m3 l3 offset-s6 offset-m6 offset-l5">
                     <button mat-button class="z-depth-2" [routerLink]="['/home']">Cancelar</button>

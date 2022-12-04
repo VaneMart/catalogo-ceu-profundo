@@ -1,8 +1,6 @@
 <div class="home">
 
-    <div class="row">
-        <app-titulo [texto]="titulo" class="col s12 m12 l12"></app-titulo>
-    </div>
+    <app-titulo [texto]="titulo" class="col s12 m12 l12"></app-titulo>
 
     <div class="row principal" *ngIf="objeto?.uuid">
         <app-objeto [objeto]="objeto" [imagem]="imagem" class="col s12 m12 l5"></app-objeto>
