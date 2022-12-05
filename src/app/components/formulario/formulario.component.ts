@@ -77,11 +77,11 @@ export class FormularioComponent implements OnInit {
   }
 
   salvar(): void {
-      //this.salvarObjeto();
-      //this.salvarImagem();
-      //this.salvarAnotacoes();
+      this.salvarObjeto();
+      this.salvarImagem();
+      this.salvarAnotacoes();
     
-      this.storageService.salvar(this.objeto, this.imagem, this.anotacoes);
+     // this.storageService.salvar(this.objeto, this.imagem, this.anotacoes);
   }
 
   mover(indice: any): void {
