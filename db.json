@@ -9,9 +9,15 @@
   "anotacoes": [
     {
       "posicao": 0,
-      "conteudo": "Foi escolhido como alvo para uma das primeiras mensagens de rádio enviadas ao espaço, com o objetivo de transmitir a uma possível civilização extraterrestre informações sobre a Terra e a civilização humana. A mensagem foi em 1974 pelo projeto SETI com o uso do radiotelescópio porto-riquenho Arecibo. A razão principal era devido ao fato de que a região, tendo uma alta densidade de estrelas, tem uma maior chance de existência de vida inteligente habitando um planeta. Entretanto, o aglomerado já não vai mais estar em sua localização atual quando a mensagem chegar. Foi mais uma demonstração tecnológica do que uma tentativa real de contactar uma civilização extraterrestre inteligente.",
+      "conteudo": "Foi escolhido como alvo para uma das primeiras mensagens de rádio enviadas ao espaço, com o objetivo de transmitir a uma possível civilização extraterrestre informações sobre a Terra e a civilização humana. A mensagem foi em 1974 pelo projeto SETI com o uso do radiotelescópio porto-riquenho Arecibo. A razão principal era devido ao fato de que a região, tendo uma alta densidade de estrelas, tem uma maior chance de existência de vida inteligente habitando um planeta. Entretanto, o aglomerado já não vai mais estar em sua localização atual quando a mensagem chegar. Foi mais uma demonstração tecnológica do que uma tentativa real de contactar uma civilização extraterrestre inteligente.                                                                                                                ",
       "uuid": "51e0576b-53af-403e-9295-7514241dd9d2",
       "id": 2
+    },
+    {
+      "posicao": 1,
+      "conteudo": "https://pt.wikipedia.org/wiki/Grande_Aglomerado_Globular_de_H%C3%A9rcules#:~:text=O%20Grande%20Aglomerado%20Globular%20de,1%20de%20junho%20de%201764.",
+      "uuid": "51e0576b-53af-403e-9295-7514241dd9d2",
+      "id": 3
     }
   ],
   "objetos": [
@@ -23,7 +29,7 @@
       "ascencaoReta": "16h 41m 43s",
       "declinacao": "+36° 27' 59\"",
       "uuid": "51e0576b-53af-403e-9295-7514241dd9d2",
-      "data": "04/12/2022 19:16:11",
+      "data": "04/12/2022 23:05:42",
       "id": 2
     }
   ]
