@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AnotacaoComponent } from './components/anotacao/anotacao.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ObjetoComponent } from './components/objeto/objeto.component';
-import { PesquisarComponent } from './components/pesquisar/pesquisar.component';
+import { PesquisaComponent } from './components/pesquisa/pesquisa.component';
 import { TituloComponent } from './components/titulo/titulo.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,7 +32,7 @@ import { NgxMaskModule } from 'ngx-mask';
     AnotacaoComponent,
     CadastroComponent,
     ObjetoComponent,
-    PesquisarComponent,
+    PesquisaComponent,
     TituloComponent,
     HeaderComponent,
     MenuComponent,
@@ -56,7 +56,7 @@ import { NgxMaskModule } from 'ngx-mask';
     NgxMaskModule.forRoot()
   ],
   exports: [
-    
+
   ],
   bootstrap: [AppComponent]
 })
