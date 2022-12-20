@@ -3,7 +3,7 @@
     {
       "id": 1,
       "uuid": "dd9bf822-90f3-48a3-8d73-67c973aa7ca4",
-      "base64": "/assets/images/fake/carangueijo.png"
+      "base64": "assets/images/fake/carangueijo.png"
     },
     {
       "id": 2,
@@ -13,12 +13,12 @@
     {
       "id": 3,
       "uuid": "51e0576b-53af-403e-9295-7514241dd9d3",
-      "base64": "/assets/images/fake/ptolomeu.png"
+      "base64": "assets/images/fake/ptolomeu.png"
     },
     {
       "id": 4,
       "uuid": "51e0576b-53af-403e-9295-7514241dd9d4",
-      "base64": "/assets/images/fake/presepio.png"
+      "base64": "assets/images/fake/presepio.png"
     }
   ],
   "anotacoes": [
