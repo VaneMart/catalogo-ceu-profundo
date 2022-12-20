@@ -49,4 +49,12 @@ export class ObjetoService {
       })
     );
   }
+
+  listar(pesquisa: string, pagina: number): Observable<Objeto[]> {
+    return this.http.get<Objeto[]>(`${environment.apiUrl}/objetos?q=${pesquisa}&_page=${pagina}&_limit=3`).pipe(
+      catchError(() => {
+        return throwError(() => new Error("Ocorreu um erro ao tentar listar os objetos catalogados"));
+      })
+    );
+  }
 }

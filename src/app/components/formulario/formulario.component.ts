@@ -67,7 +67,7 @@ export class FormularioComponent implements OnInit {
     });
   }
 
-  obterAnotacoes() {
+  obterAnotacoes(): void {
     let observable = this.anotacaoService.obter(this.uuid);
     observable.subscribe(response => {
       if(response.length > 0) {

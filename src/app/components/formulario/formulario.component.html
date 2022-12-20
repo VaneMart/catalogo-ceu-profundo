@@ -43,7 +43,7 @@
                                minlength="2"
                                maxlength="60"
                                required="true"/>
-                               <div class="mensagem" *ngIf="nome.touched && (nome.errors?.['minlength'] ||nome.errors?.['maxlength'])"><span>precisa ter de 2 a 60 caracteres</span></div>
+                               <div class="mensagem" *ngIf="nome.touched && (nome.errors?.['minlength'] || nome.errors?.['maxlength'])"><span>precisa ter de 2 a 60 caracteres</span></div>
                                <div class="mensagem" *ngIf="nome.touched && nome.errors?.['required']"><span>campo obrigatório</span></div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                                 maxlength="11"
                                 required="true"/>
                                 <div class="mensagem" *ngIf="ascencaoReta.touched && !ascencaoReta.valid && !ascencaoReta.errors?.['required']"><span>valor inválido</span></div>
-                                <div class="mensagem" *ngIf="ascencaoReta.touched && ascencaoReta.errors?.['required']"><span>campo campo obrigatório</span></div>
+                                <div class="mensagem" *ngIf="ascencaoReta.touched && ascencaoReta.errors?.['required']"><span>campo obrigatório</span></div>
                     </div>
                 </div>
 
@@ -131,7 +131,7 @@
                                 maxlength="12"
                                 required="true"/>
                                 <div class="mensagem" *ngIf="declinacao.touched && !declinacao.valid && !declinacao.errors?.['required']"><span>valor inválido</span></div>
-                                <div class="mensagem" *ngIf="declinacao.touched && declinacao.errors?.['required']"><span>campo campo obrigatório</span></div>
+                                <div class="mensagem" *ngIf="declinacao.touched && declinacao.errors?.['required']"><span>campo obrigatório</span></div>
                     </div>
                 </div>
             </mat-card-content>
