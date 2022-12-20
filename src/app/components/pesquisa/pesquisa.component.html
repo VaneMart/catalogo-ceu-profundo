@@ -1,0 +1,50 @@
+<div class="pesquisa row">
+    <form #form="ngForm">
+        <div class="dado valign-wrapper col s3 m3 l3 offset-s1 offset-m1 offset-l1">
+            <div class="col s12 m12 l12">
+                <input id="pesquisar" 
+                       type="text" 
+                       name="pesquisa" 
+                       [(ngModel)]="pesquisa" />
+            </div>
+            <div class="col s1 m1 l1 valign-wrapper">
+                <button mat-button type="submit" (click)="listarObjetos();"><i class="material-icons">search</i></button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row" *ngFor="let objeto of objetos; let i = index">
+    <div class="col s8 m8 l8 offset-s2 offset-m2 offset-l2">
+        <mat-card class="card">
+            <mat-card-content class="objeto z-depth-2 row">
+                <div class="imagem valign-wrapper col s5 m4 l3">
+                    <img [src]="imagens && imagens[i] ? imagens[i].base64 : '#'">
+                </div>
+                <div class="dados valign-wrapper col s7 m8 l9">
+                        <div class="col s5 m5 l5 offset-s1 offset-m1 offset-l1">
+                            <div class="row">
+                                <label>Nome: </label><span>{{objeto.nome}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Tipo: </label><span>{{objeto.tipo}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Constelação: </label><span>{{objeto.constelacao}}</span>
+                            </div>
+                        </div>
+                        <div class="col s5 m5 l5 offset-s1 offset-m1 offset-l1">
+                            <div class="row">
+                                <label>Magnitude: </label><span>{{objeto.magnitude}}</span>
+                            </div>
+                            <div class="row">
+                                <label>A. Reta: </label><span>{{objeto.ascencaoReta}}</span>
+                            </div>
+                            <div class="row">
+                                <label>Declinação: </label><span>{{objeto.declinacao}}</span>
+                            </div>
+                        </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

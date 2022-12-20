@@ -1,0 +1,77 @@
+.pesquisa {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}  
+
+.pesquisa > form > .dado > div > input[type=text] {
+    border: 1px solid;
+    border-color: var(--grey);
+    height: 45px;
+    font-family: var(--font-family) !important;
+    font-size: small;
+    padding-left: 10px;
+    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+}
+
+.pesquisa > form > .dado > div > input[type=text]:focus {
+    outline: var(--blue) !important;
+    border-color: var(--blue) !important;
+}
+
+.pesquisa > form > .dado > div > button {
+    background-color: var(--blue);
+    border-radius: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 45px !important;
+    height: 47px !important;
+    color: var(--black);
+    margin-top: -9px;
+    margin-left: -11px;
+    box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+}
+
+.card {
+    border: 0px !important;
+    box-shadow: none !important;
+    padding-top: unset !important;
+    padding-bottom: unset !important;
+    margin-bottom: unset !important;
+    margin-top: unset !important;
+}
+
+.objeto {
+    font-family: var(--font-family);
+    border: 0.5px solid;
+    border-color: var(--grey);
+    margin-bottom: unset !important;
+    margin-top: unset !important;
+    padding-left: unset !important;
+    padding-right: unset !important;
+    min-height: 150px;
+    max-height: 150px;
+}
+
+.imagem {
+    padding-left: unset;
+    padding-right: unset;
+    border: 0.5px solid var(--black);
+}
+
+.imagem > img {
+    min-height: 147px;
+    max-height: 147px;
+    width: 100%;
+}
+
+.dados {
+    margin-top: 1%;
+    min-height: 147px;
+    max-height: 147px;
+    width: 100%;
+    font-family: var(--font-family);
+}
+
+label {
+    color: var(--black);
+    font-weight: bold;
+}
